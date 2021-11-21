@@ -18,13 +18,14 @@ global v
 v = 0.5;
 duration = 1; %Robot working hours
 grid on
-[t,dis,path] = Floyd1(trajp);
+[t,dis,path] = Floyd1(trajp); %Generate the adjacency matrix of the graph
 time=0;
 worktime=zeros(1,size(x,1));%Record the time that the robot has been working at the current working point
 [point,goal] = Createorderform();    %Generate order
 num=1;
 pn=zeros(1,100)
 n=ones(size(x,1),1);  %Used to record which node the robot has reached on its current path
+printf("size(x, 1) = %d\n", size(x, 1));
 t=0;
 %%
 while 1
@@ -35,8 +36,9 @@ while 1
         num=num+1;
         [crashstate,crash] = robotavoid(x,xstate,state,xorder,xpath,xpoint,n,pn,target,stopp,trajp,path,dis);
         [finalpath,ind,xstate] = bidfunc(x,xstate,xpath,point,goal,duration,trajp,pn,path,dis);    %Bidding, giving the path to the lowest cost car
-        
+        printf("num = %d, ind = %d\n", num, ind);
         xorder(:,2*ind-1:2*ind)=zeros(1500,2);
+        
         n(ind)=1;
         xorder(1:size(finalpath,1),2*ind-1:2*ind)=finalpath;
         xpath(1:size(finalpath,1),2*ind-1:2*ind)=finalpath;
