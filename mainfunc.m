@@ -1,5 +1,6 @@
 close all;
 clear all;
+pkg load statistics;
 
 load('../data/trajp.mat') % Track point of the storage environment
 load('../data/x.mat')    %100 initial positions of robots
