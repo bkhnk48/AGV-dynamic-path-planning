@@ -6,6 +6,7 @@ global target;
 N=size(storagepoint,1);
 n=size(target,1);
 nodenumber=unidrnd(3);          %Number of mission points generated
+printf("Node number = %d\n", nodenumber);
 
 task=randperm(N,nodenumber);
 for i=1:nodenumber
