@@ -96,7 +96,7 @@ toc;
 
 
 tic;
-save 'path.txt' dis
+save 'path.txt' path
 toc;
 
 end
