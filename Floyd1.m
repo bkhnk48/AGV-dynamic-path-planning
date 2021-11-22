@@ -89,4 +89,14 @@ for k=1:n
         end
     end
 end
+
+tic;
+save 'dist.txt' dis
+toc;
+
+
+tic;
+save 'path.txt' dis
+toc;
+
 end
