@@ -37,7 +37,7 @@ for i=1:size(x,1)
     if bid<minb
         minb=bid;
         finalpath=finalpath0;
-        ind=i;
+        ind=i;%ind is the lowest bidding. In other words, it is the choice
     end
     
 end
