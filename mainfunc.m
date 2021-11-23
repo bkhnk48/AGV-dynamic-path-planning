@@ -2,12 +2,12 @@ close all;
 clear all;
 pkg load statistics;
 
-load('../data/trajp.mat') % Track point of the storage environment
-load('../data/x.mat')    %100 initial positions of robots
-load('../data/storagepoint.mat')   %Corresponding working point on the shelf
-load('../data/storagerock.mat')     %Shelf position
-load('../data/target.mat')          %Final goal point
-load('../data/stopp.mat')           %Corresponding to the target point, the stopping point in each robot station
+load('./data/trajp.mat') % Track point of the storage environment
+load('./data/x.mat')    %100 initial positions of robots
+load('./data/storagepoint.mat')   %Corresponding working point on the shelf
+load('./data/storagerock.mat')     %Shelf position
+load('./data/target.mat')          %Final goal point
+load('./data/stopp.mat')           %Corresponding to the target point, the stopping point in each robot station
 xpath=zeros(1500,200);%The remaining tasks used to store the current order of the robot
 xstate=zeros(1,100); %Used to indicate the status of the robot, 0 has not accepted the order 1 is executing the order
 state=zeros(1,100); %Used to judge whether the robot has reached the task point and is ready to perform the task
