@@ -6,6 +6,7 @@ global trajp;
      axis([-1 35 -1 25]);
 %      grid on
             
+            %Draw the storage rock?
             rectangle('Position',[2.9,2.9,1.2,0.2]);hold on;rectangle('Position',[2.9,8.9,1.2,0.2]);hold on;
             rectangle('Position',[2.9,4.9,1.2,0.2]);hold on;rectangle('Position',[2.9,10.9,1.2,0.2]);hold on;
             rectangle('Position',[2.9,6.9,1.2,0.2]);hold on;rectangle('Position',[2.9,12.9,1.2,0.2]);hold on;
@@ -85,18 +86,32 @@ global trajp;
             rectangle('Position',[29.9,18.9,1.2,0.2]);hold on;
             rectangle('Position',[29.9,20.9,1.2,0.2]);hold on;
             
-             rectangle('Position',[4.3,21.8,1.4,1.4]);hold on;rectangle('Position',[7.3,21.8,1.4,1.4]);hold on;rectangle('Position',[10.3,21.8,1.4,1.4]);hold on;rectangle('Position',[13.3,21.8,1.4,1.4]);hold on;
-             rectangle('Position',[16.3,21.8,1.4,1.4]);hold on;rectangle('Position',[19.3,21.8,1.4,1.4]);hold on;rectangle('Position',[22.3,21.8,1.4,1.4]);hold on;
-             rectangle('Position',[25.3,21.8,1.4,1.4]);hold on;rectangle('Position',[28.3,21.8,1.4,1.4]);hold on;
-             rectangle('Position',[0.3,19.3,1.4,1.4]);hold on;rectangle('Position',[0.3,17.3,1.4,1.4]);hold on;rectangle('Position',[0.3,15.3,1.4,1.4]);hold on;
-             rectangle('Position',[0.3,13.3,1.4,1.4]);hold on;rectangle('Position',[0.3,11.3,1.4,1.4]);hold on;rectangle('Position',[0.3,9.3,1.4,1.4]);hold on;
-             rectangle('Position',[0.3,7.3,1.4,1.4]);hold on;rectangle('Position',[0.3,5.3,1.4,1.4]);hold on;rectangle('Position',[0.3,3.3,1.4,1.4]);hold on;
-             rectangle('Position',[32.3,19.3,1.4,1.4]);hold on;rectangle('Position',[32.3,17.3,1.4,1.4]);hold on;rectangle('Position',[32.3,15.3,1.4,1.4]);hold on;
-             rectangle('Position',[32.3,13.3,1.4,1.4]);hold on;rectangle('Position',[32.3,11.3,1.4,1.4]);hold on;rectangle('Position',[32.3,9.3,1.4,1.4]);hold on;
-             rectangle('Position',[32.3,7.3,1.4,1.4]);hold on;rectangle('Position',[32.3,5.3,1.4,1.4]);hold on;rectangle('Position',[32.3,3.3,1.4,1.4]);hold on;
-             rectangle('Position',[4.3,0.8,1.4,1.4]);hold on;rectangle('Position',[7.3,0.8,1.4,1.4]);hold on;rectangle('Position',[10.3,0.8,1.4,1.4]);hold on;
-             rectangle('Position',[13.3,0.8,1.4,1.4]);hold on;rectangle('Position',[16.3,0.8,1.4,1.4]);hold on;rectangle('Position',[19.3,0.8,1.4,1.4]);hold on;
-             rectangle('Position',[22.3,0.8,1.4,1.4]);hold on;rectangle('Position',[25.3,0.8,1.4,1.4]);hold on;rectangle('Position',[28.3,0.8,1.4,1.4]);hold on;
+            %Stopping points of robots
+             %rectangle('Position',[4.3,21.8,1.4,1.4]);hold on;rectangle('Position',[7.3,21.8,1.4,1.4]);hold on;
+             %rectangle('Position',[10.3,21.8,1.4,1.4]);hold on;rectangle('Position',[13.3,21.8,1.4,1.4]);hold on;
+             rectangle('Position',[16.3,21.8,1.4,1.4]);hold on;
+             %rectangle('Position',[19.3,21.8,1.4,1.4]);hold on;
+             %rectangle('Position',[22.3,21.8,1.4,1.4]);hold on;
+             %rectangle('Position',[25.3,21.8,1.4,1.4]);hold on;rectangle('Position',[28.3,21.8,1.4,1.4]);hold on;
+             
+             %rectangle('Position',[0.3,19.3,1.4,1.4]);hold on;rectangle('Position',[0.3,17.3,1.4,1.4]);hold on;rectangle('Position',[0.3,15.3,1.4,1.4]);hold on;
+             %rectangle('Position',[0.3,13.3,1.4,1.4]);hold on;
+             rectangle('Position',[0.3,11.3,1.4,1.4]);hold on;
+             %rectangle('Position',[0.3,9.3,1.4,1.4]);hold on;
+             %rectangle('Position',[0.3,7.3,1.4,1.4]);hold on;rectangle('Position',[0.3,5.3,1.4,1.4]);hold on;rectangle('Position',[0.3,3.3,1.4,1.4]);hold on;
+             
+             %rectangle('Position',[32.3,19.3,1.4,1.4]);hold on;rectangle('Position',[32.3,17.3,1.4,1.4]);hold on;rectangle('Position',[32.3,15.3,1.4,1.4]);hold on;
+             %rectangle('Position',[32.3,13.3,1.4,1.4]);hold on;
+             rectangle('Position',[32.3,11.3,1.4,1.4]);hold on;
+             %rectangle('Position',[32.3,9.3,1.4,1.4]);hold on;
+             %rectangle('Position',[32.3,7.3,1.4,1.4]);hold on;rectangle('Position',[32.3,5.3,1.4,1.4]);hold on;rectangle('Position',[32.3,3.3,1.4,1.4]);hold on;
+             
+             %rectangle('Position',[4.3,0.8,1.4,1.4]);hold on;rectangle('Position',[7.3,0.8,1.4,1.4]);hold on;rectangle('Position',[10.3,0.8,1.4,1.4]);hold on;
+             %rectangle('Position',[13.3,0.8,1.4,1.4]);hold on;
+             rectangle('Position',[16.3,0.8,1.4,1.4]);hold on;
+             %rectangle('Position',[19.3,0.8,1.4,1.4]);hold on;
+             %rectangle('Position',[22.3,0.8,1.4,1.4]);hold on;rectangle('Position',[25.3,0.8,1.4,1.4]);hold on;rectangle('Position',[28.3,0.8,1.4,1.4]);hold on;
+             
              rectangle('Position',[0,0,34,24]);hold on;
             plot(storagerock(:,1),storagerock(:,2),'sk');hold on;
             plot(target(:,1),target(:,2),'xr');hold on;
