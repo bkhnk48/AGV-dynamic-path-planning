@@ -30,7 +30,7 @@ printf("size(x, 1) = %d\n", size(x, 1));
 t=0;
 %%
 while 1
-    if num<200                              %Generate an order every -s
+    if num<10                              %Generate an order every -s
         [point,goal] = Createorderform();    %Generate order
         %         point=[3 3.5]
         %          goal=[4.5 2]
@@ -76,7 +76,10 @@ while 1
         end
         
     end
-    if num==200&&(~any(xstate))
+    if num == 10 &&(~any(xstate))
+    %Note: the any(xstate) returns 1 if there is at least one non-zero value in xstate
+    %in case all elements of xstate are zero, the any returns 0. The ~any(xstate)
+    % returns 1 then.
         break;
     end
     
