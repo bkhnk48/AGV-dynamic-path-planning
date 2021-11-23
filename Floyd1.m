@@ -54,7 +54,7 @@ for i=1:36
 end
 
 % Floyd
-dis=t;
+%{dis=t;
 for  i=1:length(dis)
     for  j=1:length(dis)
         if dis(i,j)==0
@@ -89,14 +89,8 @@ for k=1:n
         end
     end
 end
-
-tic;
-save 'dist.txt' dis
-toc;
-
-
-tic;
-save 'path.txt' path
-toc;
+%}
+dis = importdata('dis.txt') ;
+path = importdata('path.txt');
 
 end
