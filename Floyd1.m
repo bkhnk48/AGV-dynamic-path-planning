@@ -54,7 +54,8 @@ for i=1:36
 end
 
 % Floyd
-%{dis=t;
+%{
+dis=t;
 for  i=1:length(dis)
     for  j=1:length(dis)
         if dis(i,j)==0
