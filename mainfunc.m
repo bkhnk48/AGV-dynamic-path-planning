@@ -3,11 +3,26 @@ clear all;
 pkg load statistics;
 
 load('./data/trajp.mat') % Track point of the storage environment
+%luu tru cac diem ma AGV co the di qua.
+%trajp stores reachable points for AGV
+%dlmwrite('trajp.txt', trajp, 'delimiter','\t','newline','pc'); => How to export .mat to txt 
 load('./data/x.mat')    %100 initial positions of robots
+%luu tru cac diem ma AGV co the xuat phat
+%x stores points where AGVs would start
 load('./data/storagepoint.mat')   %Corresponding working point on the shelf
+%You could read the meaning of storagepoint at: 
+%https://github.com/bkhnk48/AGV-dynamic-path-planning/issues/3#issue-1061956103
 load('./data/storagerock.mat')     %Shelf position
+%meaning of storagerock:
+%https://github.com/bkhnk48/AGV-dynamic-path-planning/issues/3#issuecomment-977472672
 load('./data/target.mat')          %Final goal point
-load('./data/stopp.mat')           %Corresponding to the target point, the stopping point in each robot station
+%meaning of target:
+%https://github.com/bkhnk48/AGV-dynamic-path-planning/issues/3#issuecomment-977492322
+load('./data/stopp.mat')           
+%Corresponding to the target point, the stopping point in each robot station
+%meaning of stopp:
+%https://github.com/bkhnk48/AGV-dynamic-path-planning/issues/3#issuecomment-977555334
+
 xpath=zeros(1500,200);%The remaining tasks used to store the current order of the robot
 xstate=zeros(1,100); %Used to indicate the status of the robot, 0 has not accepted the order 1 is executing the order
 state=zeros(1,100); %Used to judge whether the robot has reached the task point and is ready to perform the task
