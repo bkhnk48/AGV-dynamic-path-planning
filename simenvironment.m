@@ -1,7 +1,7 @@
-function  simenvironment()
+function  simenvironment(target)
 %Simulation environment
 global storagerock; 
-global target;
+%global target;
 global trajp;
      axis([-1 35 -1 25]);
 %      grid on
