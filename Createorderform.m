@@ -1,8 +1,8 @@
-function [point,goal] = Createorderform()
+function [point,goal] = Createorderform(target)
 %Generate orders
 point=[];
 global storagepoint;
-global target;
+%global target;
 N=size(storagepoint,1);
 n=size(target,1);
 nodenumber=unidrnd(3);          %Number of mission points generated
