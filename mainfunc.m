@@ -6,7 +6,8 @@ load('./data/trajp.mat') % Track point of the storage environment
 %luu tru cac diem ma AGV co the di qua.
 %trajp stores reachable points for AGV
 %dlmwrite('trajp.txt', trajp, 'delimiter','\t','newline','pc'); => How to export .mat to txt 
-load('./data/x.mat')    %100 initial positions of robots
+%load('./data/x.mat')    %100 initial positions of robots
+x = importdata('x.txt') ;
 %luu tru cac diem ma AGV co the xuat phat
 %x stores points where AGVs would start
 load('./data/storagepoint.mat')   %Corresponding working point on the shelf
@@ -15,9 +16,10 @@ load('./data/storagepoint.mat')   %Corresponding working point on the shelf
 load('./data/storagerock.mat')     %Shelf position
 %meaning of storagerock:
 %https://github.com/bkhnk48/AGV-dynamic-path-planning/issues/3#issuecomment-977472672
-load('./data/target.mat')          %Final goal point
+%load('./data/target.mat')          %Final goal point
 %meaning of target:
 %https://github.com/bkhnk48/AGV-dynamic-path-planning/issues/3#issuecomment-977492322
+target = importdata('target.txt') ;
 load('./data/stopp.mat')           
 %Corresponding to the target point, the stopping point in each robot station
 %meaning of stopp:
@@ -37,7 +39,7 @@ grid on
 [t,dis,path] = Floyd1(trajp); %Generate the adjacency matrix of the graph
 time=0;
 worktime=zeros(1,size(x,1));%Record the time that the robot has been working at the current working point
-[point,goal] = Createorderform();    %Generate order
+[point,goal] = Createorderform(target);    %Generate order
 num=1;
 pn=zeros(1,100)
 n=ones(size(x,1),1);  %Used to record which node the robot has reached on its current path
@@ -46,7 +48,7 @@ t=0;
 %%
 while 1
     if num<2                              %Generate an order every -s
-        [point,goal] = Createorderform();    %Generate order
+        [point,goal] = Createorderform(target);    %Generate order
         %         point=[3 3.5]
         %          goal=[4.5 2]
         num=num+1;
@@ -73,7 +75,7 @@ while 1
         plot(finalpath(:,1),finalpath(:,2),'--');hold on;
         plot(x(:,1),x(:,2),'ro','MarkerFaceColor','r');hold on;
         plot(storagerock(:,1),storagerock(:,2),'sk');hold on;
-        simenvironment()
+        simenvironment(target)
         plot(target(:,1),target(:,2),'xr');hold on;
         grid on
         drawnow;
