@@ -1,3 +1,5 @@
+%octave --force-gui
+%command to open octave in MacOS
 close all;
 clear all;
 pkg load statistics;
