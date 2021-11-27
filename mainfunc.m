@@ -103,3 +103,4 @@ while 1
     end
     
 end
+printf("FINISH!\n");
