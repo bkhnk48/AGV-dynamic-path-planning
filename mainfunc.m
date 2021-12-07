@@ -47,6 +47,9 @@ pn=zeros(1,100)
 n=ones(size(x,1),1);  %Used to record which node the robot has reached on its current path
 printf("size(x, 1) = %d\n", size(x, 1));
 t=0;
+m = 1000;
+step = 0;
+[xAgent, yAgent] = genellipse(m);
 %%
 while 1
     if num<2                              %Generate an order every -s
@@ -74,6 +77,8 @@ while 1
         time=time+dt;
         t=t+dt;
         worktime;
+        step = mod((step + 1), m); 
+        plot(xAgent(step), yAgent(step), 'h');
         plot(finalpath(:,1),finalpath(:,2),'--');hold on;
         plot(x(:,1),x(:,2),'ro','MarkerFaceColor','r');hold on;
         plot(storagerock(:,1),storagerock(:,2),'sk');hold on;
