@@ -24,3 +24,6 @@ grid on;
 hold on;
 axis equal;
 plot(xr+xc,yr+yc,'b');
+xAgent = xr + xc;
+yAgent = yr + yc;
+plot(xAgent(1), yAgent(1), 'h');
